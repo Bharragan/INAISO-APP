@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const productSchema = new mongoose.Schema({
   name: String,
   reservationDate: Date,
+  product_id:String,
 });
 
 // Define el esquema del usuario

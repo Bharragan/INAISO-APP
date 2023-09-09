@@ -1,14 +1,18 @@
-// backend/routes/userRoutes.js
 const express = require('express');
 const router = express.Router();
-const userController = require('../controllers/userController');
+const {
+  getUsers,
+  getUserById,
+  updateProductForUser,
+  createUser,
+  deleteProductForUser,
+} = require('../controllers/userController');
 
 // Rutas para usuarios
-
-// Obtener todos los usuarios
-router.get('/', userController.getUsers);
-
-// Obtener un usuario por ID
-router.get('/:userId', userController.getUserById);
+router.get('/', getUsers);
+router.get('/:userId', getUserById);
+router.put('/:userId/products/:productId', updateProductForUser);
+router.post('/', createUser);
+router.delete('/:userId/products/:productId', deleteProductForUser);
 
 module.exports = router;
